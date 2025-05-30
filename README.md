@@ -45,9 +45,34 @@ Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart spreadshe
 
 </div>
 
-<p align="center"><a href="markdown/readme/languages/README.md"><b>See other languages »</b></a></p>
+<p align="center"><a href="./markdown/readme/languages/README.md"><b>See other languages »</b></a></p>
 
 <img src="https://static.scarf.sh/a.png?x-pxid=c12a77cc-855e-4602-8a0f-614b2d0da56a" />
+
+# Table of Contents
+
+- [Quick try](#quick-try)
+    - [Docker](#docker)
+    - [Binaries](#binaries)
+    - [Docker Compose](#docker-compose)
+- [GUI](#gui)
+- [Screenshots](#screenshots)
+- [Features](#features)
+    - [Rich Spreadsheet Interface](#rich-spreadsheet-interface)
+    - [App Store for Workflow Automations](#app-store-for-workflow-automations)
+    - [Programmatic Access](#programmatic-access)
+    - [Sync Schema](#sync-schema)
+    - [Audit](#audit)
+- [Production Setup](#production-setup)
+    - [Environment variables](#environment-variables)
+- [Development Setup](#development-setup)
+- [Contributing](#contributing)
+- [Why are we building this?](#why-are-we-building-this)
+- [Our Mission](#our-mission)
+- [License](#license)
+- [Contributors](#contributors)
+- [Join Our Team](#join-our-team)
+- [Join Our Community](#join-our-community)
 
 # Join Our Team
 
@@ -75,7 +100,7 @@ Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart spreadshe
 docker run -d --name nocodb-postgres \
 -v "$(pwd)"/nocodb:/usr/app/data/ \
 -p 8080:8080 \
--e NC_DB="pg://host.docker.internal:5432?u=root&p=password&d=d1" \ 
+-e NC_DB="pg://host.docker.internal:5432?u=root&p=password&d=d1" \
 -e NC_AUTH_JWT_SECRET="569a1821-0a93-45e8-87ab-eb857f20a010" \
 nocodb/nocodb:latest
 
@@ -87,7 +112,7 @@ nocodb/nocodb:latest
 ```
 
 ## Binaries
-🚥 Binaries are intended for ONLY quick trials or testing purposes and are not recommended for production use.
+🚥 Binaries are intended for quick trials or testing purposes only and are not recommended for production use.
   | OS      | Architecture | Command                                                                                      |
   |---------|--------------|----------------------------------------------------------------------------------------------|
   | macOS   | arm64        | `curl http://get.nocodb.com/macos-arm64 -o nocodb -L && chmod +x nocodb && ./nocodb`         |
@@ -100,7 +125,7 @@ nocodb/nocodb:latest
 
 ## Docker Compose
 
-We provide different docker-compose.yml files under [this directory](https://github.com/nocodb/nocodb/tree/master/docker-compose). Here are some examples.
+We provide different docker-compose.yml files under [this directory](./docker-compose). Here are some examples.
 
 ```bash
 git clone https://github.com/nocodb/nocodb
@@ -127,30 +152,6 @@ Access Dashboard using: [http://localhost:8080/dashboard](http://localhost:8080/
 ![11](https://user-images.githubusercontent.com/35857179/194844903-c1e47f40-e782-4f5d-8dce-6449cc70b181.png)
 ![12](https://user-images.githubusercontent.com/35857179/194844907-09277d3e-cbbf-465c-9165-6afc4161e279.png)
 
-# Table of Contents
-
-- [Quick try](#quick-try)
-    - [Docker](#docker)
-    - [Docker Compose](#docker-compose)
-- [GUI](#gui)
-- [Join Our Community](#join-our-community)
-- [Screenshots](#screenshots)
-- [Table of Contents](#table-of-contents)
-- [Features](#features)
-    - [Rich Spreadsheet Interface](#rich-spreadsheet-interface)
-    - [App Store for Workflow Automations](#app-store-for-workflow-automations)
-    - [Programmatic Access](#programmatic-access)
-    - [Sync Schema](#sync-schema)
-    - [Audit](#audit)
-- [Production Setup](#production-setup)
-    - [Environment variables](#environment-variables)
-- [Development Setup](#development-setup)
-- [Contributing](#contributing)
-- [Why are we building this?](#why-are-we-building-this)
-- [Our Mission](#our-mission)
-- [License](#license)
-- [Contributors](#contributors)
-
 # Features
 
 ### Rich Spreadsheet Interface
@@ -166,22 +167,22 @@ Access Dashboard using: [http://localhost:8080/dashboard](http://localhost:8080/
 
 ### App Store for Workflow Automations
 
-We provide different integrations in three main categories. See <a href="https://docs.nocodb.com/account-settings/oss-specific-details/#app-store" target="_blank">App Store</a> for details.
+We provide various integrations across three main categories. See <a href="https://docs.nocodb.com/account-settings/oss-specific-details/#app-store" target="_blank">App Store</a> for details.
 
-- ⚡ &nbsp;Chat: Slack, Discord, Mattermost, and etc
-- ⚡ &nbsp;Email: AWS SES, SMTP, MailerSend, and etc
-- ⚡ &nbsp;Storage: AWS S3, Google Cloud Storage, Minio, and etc
+- ⚡ &nbsp;Chat: Slack, Discord, Mattermost, etc.
+- ⚡ &nbsp;Email: AWS SES, SMTP, MailerSend, etc.
+- ⚡ &nbsp;Storage: AWS S3, Google Cloud Storage, Minio, etc.
 
 ### Programmatic Access
 
-We provide the following ways to let users programmatically invoke actions. You can use a token (either JWT or Social Auth) to sign your requests for authorization to NocoDB.
+We provide the following ways for users to programmatically invoke actions. You can use a token (either JWT or Social Auth) to authorize your requests to NocoDB.
 
 - ⚡ &nbsp;REST APIs
 - ⚡ &nbsp;NocoDB SDK
 
 ### Sync Schema
 
-We allow you to sync schema changes if you have made changes outside NocoDB GUI. However, it has to be noted then you will have to bring your own schema migrations for moving from one environment to another. See <a href="https://docs.nocodb.com/data-sources/sync-with-data-source" target="_blank">Sync Schema</a> for details.
+We allow you to sync schema changes if you have made changes outside NocoDB GUI. However, it should be noted that you will have to bring your own schema migrations for moving from one environment to another. See <a href="https://docs.nocodb.com/data-sources/sync-with-data-source" target="_blank">Sync Schema</a> for details.
 
 ### Audit
 

@@ -718,7 +718,7 @@ knex.QueryBuilder.extend(
       return this;
     }
 
-    const conditionCopy = JSON.parse(JSON.stringify(condition));
+    const conditionCopy = structuredClone(condition);
 
     // parse and do all the joins
     const qb = parseNestedConditionAndJoin.call(
@@ -1111,7 +1111,7 @@ knex.QueryBuilder.extend(
       return this;
     }
 
-    const conditionCopy = JSON.parse(JSON.stringify(condition));
+    const conditionCopy = structuredClone(condition);
 
     // parse and do all the joins
     // const qb = parseNestedConditionAndJoin.call({ models }, conditionCopy, this);
